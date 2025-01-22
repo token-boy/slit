@@ -2,15 +2,15 @@ mod initialize;
 mod register;
 mod swap;
 mod create;
-mod play;
-mod settle;
+mod stake;
+mod redeem;
 
 use initialize::*;
 use register::*;
 use swap::*;
 use create::*;
-use play::*;
-use settle::*;
+use stake::*;
+use redeem::*;
 
 use slit_api::prelude::*;
 use steel::*;
@@ -27,8 +27,8 @@ pub fn process_instruction(
         SlitInstruction::Register => process_register(accounts)?,
         SlitInstruction::Swap => process_swap(accounts, data)?,
         SlitInstruction::Create => process_create(accounts, data)?,
-        SlitInstruction::Play => process_play(accounts, data)?,
-        SlitInstruction::Settle => process_settle(accounts, data)?,
+        SlitInstruction::Stake => process_stake(accounts, data)?,
+        SlitInstruction::Redeem => process_redeem(accounts, data)?,
     }
 
     Ok(())

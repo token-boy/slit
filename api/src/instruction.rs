@@ -7,8 +7,8 @@ pub enum SlitInstruction {
     Register = 1,
     Swap = 2,
     Create = 3,
-    Play = 4,
-    Settle = 5,
+    Stake = 4,
+    Redeem = 5,
 }
 
 #[repr(C)]
@@ -37,14 +37,14 @@ pub struct Create {
 
 #[repr(C)]
 #[derive(Clone, Copy, Debug, Pod, Zeroable)]
-pub struct Play {
+pub struct Stake {
     pub id: [u8; 16],
     pub chips: [u8; 8],
 }
 
 #[repr(C)]
 #[derive(Clone, Copy, Debug, Pod, Zeroable)]
-pub struct Settle {
+pub struct Redeem {
     pub id: [u8; 16],
     pub chips: [u8; 8],
     pub fee_chips: [u8; 8],
@@ -54,5 +54,5 @@ instruction!(SlitInstruction, Initialize);
 instruction!(SlitInstruction, Register);
 instruction!(SlitInstruction, Swap);
 instruction!(SlitInstruction, Create);
-instruction!(SlitInstruction, Play);
-instruction!(SlitInstruction, Settle);
+instruction!(SlitInstruction, Stake);
+instruction!(SlitInstruction, Redeem);
