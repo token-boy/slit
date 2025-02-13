@@ -1,7 +1,7 @@
 use solana_program::{pubkey, pubkey::Pubkey};
 
 /// The authority allowed to initialize the program.
-pub const AUTHORITY_ADDRESS: &Pubkey = &pubkey!("Ao8GyMY5mZ15H5RN3CaokXLdPAoUfBP2G5JEGrQa1hPK");
+pub const AUTHORITY_ADDRESS: &Pubkey = &pubkey!("AMKZAwwek5wC92aPKyZmfDFQbJJpYfn2pKNZm59p3Fuo");
 
 /// Seed of the board account PDA.
 pub const BOARD: &[u8] = b"board";
