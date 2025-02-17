@@ -32,7 +32,7 @@ pub fn process_redeem(accounts: &[AccountInfo<'_>], data: &[u8]) -> ProgramResul
 
     if board.dealer.ne(&dealer_info.key) {
         return Err(SlitError::InvalidDealer.into());
-    } else if chips + fee_chips < board.chips {
+    } else if chips + fee_chips > board.chips {
         return Err(SlitError::NotEnoughChips.into());
     }
 
